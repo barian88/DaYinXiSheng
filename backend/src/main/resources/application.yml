@@ -1,0 +1,34 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8003
+
+spring:
+  application:
+    # 应用名称
+    name: backend
+  servlet:
+    # 文件大小限制
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.143.226.11:3306/final_project?serverTimezone=GMT%2B8
+    username: final_project
+    password: gjy0808..
+
+#开启日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 腾讯云对象存储配置
+cos:
+  client:
+    secret_id: AKIDELNGAwVwAAwaHrJbhqxsrorricOwGRXH
+    secret_key: nOvOxPj8RqQ5rZ9YoClJyZGuTAsW6cM4
+    region: ap-beijing
+    bucket: bucket-1305916869
+
+
+

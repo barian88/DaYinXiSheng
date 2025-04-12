@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="7b67767bd4d746ef908f450c4814e191" class="chart-container" style="width:28.6rem; height:15.6rem; color: #0bedae;"></div>
+    <script>
+        var chart_7b67767bd4d746ef908f450c4814e191 = echarts.init(
+            document.getElementById('7b67767bd4d746ef908f450c4814e191'), 'white', {
+                renderer: 'canvas'
+            });
+        var option_7b67767bd4d746ef908f450c4814e191 = {
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "color": [
+                "#0bedae",
+            ],
+            "series": [{
+                "type": "graph",
+                "layout": "force",
+                "symbolSize": 10,
+                "circular": {
+                    "rotateLabel": false
+                },
+                "force": {
+                    "repulsion": 1000,
+                    "edgeLength": 50,
+                    "gravity": 1
+                },
+                "label": {
+                    "show": true,
+                    "position": "right",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0.3,
+                    "type": "solid",
+                    "color": "source"
+                },
+                "roam": false,
+                "draggable": true,
+                "focusNodeAdjacency": true,
+                "data": [{
+                    "name": "贷款",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "公积金",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "住房",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "缴纳",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "劳动",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "人才",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "市场",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "就业",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "工作",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "失业",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "裁员",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "市人力资源社会保障局",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 40
+                }],
+                "categories": [{}, {
+                    // "name": "\u5386\u53f2\u8282\u70b9"
+                }, {
+                    // "name": "\u65b0\u589e\u8282\u70b9"
+                }],
+                "edgeLabel": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "edgeSymbol": [
+                    null,
+                    null
+                ],
+                "edgeSymbolSize": 10,
+                "links": [{
+                    "source": "市人力资源社会保障局",
+                    "target": "贷款"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "公积金"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "住房"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "缴纳"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "劳动"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "人才"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "市场"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "就业"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "工作"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "失业"
+                }, {
+                    "source": "市人力资源社会保障局",
+                    "target": "裁员"
+                }]
+            }],
+            "legend": [{
+                "data": [
+                    "",
+                    "\u5386\u53f2\u8282\u70b9",
+                    "\u65b0\u589e\u8282\u70b9"
+                ],
+                "selected": {
+                    "": true,
+                    "\u5386\u53f2\u8282\u70b9": true,
+                    "\u65b0\u589e\u8282\u70b9": true
+                },
+                "show": true,
+                "padding": 5,
+                "itemGap": 10,
+                "itemWidth": 25,
+                "itemHeight": 14
+            }],
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "textStyle": {
+                    "fontSize": 14
+                },
+                "borderWidth": 0,
+                "padding": 5
+            },
+            "title": [{
+                // "text": "Graph-\u57fa\u672c\u793a\u4f8b",
+                "padding": 5,
+                "itemGap": 10
+            }]
+        };
+        chart_7b67767bd4d746ef908f450c4814e191.setOption(option_7b67767bd4d746ef908f450c4814e191);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="7b67767bd4d746ef908f450c4814e191" class="chart-container" style="width:28.6rem; height:15.6rem; color: #0bedae;"></div>
+    <script>
+        var chart_7b67767bd4d746ef908f450c4814e191 = echarts.init(
+            document.getElementById('7b67767bd4d746ef908f450c4814e191'), 'white', {
+                renderer: 'canvas'
+            });
+        var option_7b67767bd4d746ef908f450c4814e191 = {
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "color": [
+                "#0bedae",
+            ],
+            "series": [{
+                "type": "graph",
+                "layout": "force",
+                "symbolSize": 10,
+                "circular": {
+                    "rotateLabel": false
+                },
+                "force": {
+                    "repulsion": 1000,
+                    "edgeLength": 50,
+                    "gravity": 1
+                },
+                "label": {
+                    "show": true,
+                    "position": "right",
+                    "margin": 8
+                },
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0.3,
+                    "type": "solid",
+                    "color": "source"
+                },
+                "roam": false,
+                "draggable": true,
+                "focusNodeAdjacency": true,
+                "data": [{
+                    "name": "补课",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "负担",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "周末",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "网课",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "成绩",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "素质",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "中学",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "学校",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "考试",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "分数",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "放假",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "开学",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 10
+                }, {
+                    "name": "市教育局",
+                    "fixed": false,
+                    "category": 1,
+                    "symbolSize": 40
+                }],
+                "categories": [{}, {
+                    // "name": "\u5386\u53f2\u8282\u70b9"
+                }, {
+                    // "name": "\u65b0\u589e\u8282\u70b9"
+                }],
+                "edgeLabel": {
+                    "show": false,
+                    "position": "top",
+                    "margin": 8
+                },
+                "edgeSymbol": [
+                    null,
+                    null
+                ],
+                "edgeSymbolSize": 10,
+                "links": [{
+                    "source": "市教育局",
+                    "target": "补课"
+                }, {
+                    "source": "市教育局",
+                    "target": "负担"
+                }, {
+                    "source": "市教育局",
+                    "target": "周末"
+                }, {
+                    "source": "市教育局",
+                    "target": "网课"
+                }, {
+                    "source": "市教育局",
+                    "target": "成绩"
+                }, {
+                    "source": "市教育局",
+                    "target": "素质"
+                }, {
+                    "source": "市教育局",
+                    "target": "中学"
+                }, {
+                    "source": "市教育局",
+                    "target": "学校"
+                }, {
+                    "source": "市教育局",
+                    "target": "考试"
+                }, {
+                    "source": "市教育局",
+                    "target": "分数"
+                }, {
+                    "source": "市教育局",
+                    "target": "放假"
+                }, {
+                    "source": "市教育局",
+                    "target": "开学"
+                }]
+            }],
+            "legend": [{
+                "data": [
+                    "",
+                    "\u5386\u53f2\u8282\u70b9",
+                    "\u65b0\u589e\u8282\u70b9"
+                ],
+                "selected": {
+                    "": true,
+                    "\u5386\u53f2\u8282\u70b9": true,
+                    "\u65b0\u589e\u8282\u70b9": true
+                },
+                "show": true,
+                "padding": 5,
+                "itemGap": 10,
+                "itemWidth": 25,
+                "itemHeight": 14
+            }],
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "textStyle": {
+                    "fontSize": 14
+                },
+                "borderWidth": 0,
+                "padding": 5
+            },
+            "title": [{
+                // "text": "Graph-\u57fa\u672c\u793a\u4f8b",
+                "padding": 5,
+                "itemGap": 10
+            }]
+        };
+        chart_7b67767bd4d746ef908f450c4814e191.setOption(option_7b67767bd4d746ef908f450c4814e191);
+    </script>
+</body>
+
+</html>

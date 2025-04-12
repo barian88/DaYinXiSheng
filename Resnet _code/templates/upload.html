@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Upload Image</title>
+    <!-- 引入jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #ededed;
+        }
+        .container{
+            background-color: #FFFFFF;
+            padding: 2rem 15% 0 15%;
+            height: 100%;
+            margin: auto;
+            width: fit-content;
+        }
+        h1{
+            border-bottom: 1px solid #cdcdcd;
+            padding-bottom: 1rem;
+        }
+        #file-input{
+            display: none;
+        }
+        .operation{
+            display: flex;
+            width: calc(20vw + 40vh);
+            margin-top: 2rem;
+        }
+        form{
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40vh;
+        }
+        .upload-border{
+            width: 20vw;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px #cdcdcd dashed ;
+            border-radius: 12px;
+        }
+        .icon{
+            width: 6rem;
+            height: 6rem;
+        }
+        .tip{
+            font-size: small;
+            color: #409eff;
+        }
+        .upload-border:hover{
+            border: 2px #409eff dashed ;
+            cursor: pointer;
+        }
+        .preview{
+            height: 40vh;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .preview-img{
+            height: 20vh;
+            aspect-ratio: 1;
+            border-radius: 12px;
+        }
+        .prediction-result{
+            margin-top: 100px;
+        }
+        .result{
+            font-size: larger;
+            margin-top: 2rem;
+            width: fit-content;
+            color: #555;
+        }
+        .problem-1{
+            margin-bottom: 1rem;
+        }
+        .res-divider{
+            margin: 1rem 0;
+            background-color: #cdcdcd;
+        }
+        #prediction-result-1, #prediction-result-2{
+            color: #000;
+            font-weight: bold;
+
+        }
+
+
+        .button-38 {
+            background-color: #FFFFFF;
+            border: 0;
+            border-radius: .5rem;
+            box-sizing: border-box;
+            color: #111827;
+            font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-size: .875rem;
+            font-weight: 600;
+            line-height: 1.25rem;
+            padding: .75rem 1rem;
+            text-align: center;
+            text-decoration: none #D1D5DB solid;
+            text-decoration-thickness: auto;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-38:hover {
+            background-color: rgb(249,250,251);
+        }
+
+        .button-38:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+
+        .button-38:focus-visible {
+            box-shadow: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <h1>Upload Image for Prediction</h1>
+    <div class="operation">
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" onchange="handleFile(this.files)">
+            <div id="file-select" onclick="selectFile(this.e)">
+                <div class="upload-border">
+                    <img class="icon" src="{{ url_for('static', filename='images/upload.png') }}" alt="图片描述">
+                    <div class="tip">Here to upload</div>
+                </div>
+            </div>
+            <button type="submit" class="button-38" role="button">Submit</button>
+        </form>
+        <div id="preview" class="preview">
+            <img class="preview-img" id="preview-img" src="{{ url_for('static', filename='images/empty.png') }}" alt="选择的图片">
+        </div>
+    </div>
+
+    <h1 id="prediction-result" class="prediction-result">Prediction Result</h1> <!-- 用于显示结果的元素 -->
+    <div class="result">
+        <span class="problem-1">Problem-1：</span>
+        <span id="prediction-result-1">To be predicted</span> <!-- 用于显示结果的元素 -->
+        <div class="res-divider"></div>
+        <span class="problem-2">Problem-2：</span>
+        <span id="prediction-result-2">To be predicted</span> <!-- 用于显示结果的元素 -->
+    </div>
+</div>
+
+
+<script>
+
+    //选择文件
+    function selectFile(e){
+        fileInput = document.getElementById("file-input");
+        fileInput.click();  // jQuery can use trigger()
+        // e.preventDefault(); // prevent navigation to "#"
+    }
+    // 处理选择的文件
+    function handleFile(files){
+        const file = files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const previewImg = document.getElementById('preview-img');
+                previewImg.src = e.target.result;
+                previewImg.style.display = 'block';
+                previewImg.style.height = '40vh';
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+    // 点击确认上传文件分析
+    document.getElementById('upload-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // 阻止表单提交的默认行为
+
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: '/',
+            type: 'POST',
+            data: formData,
+            success: function(res) {
+                var predictionResult1 = document.getElementById('prediction-result-1');
+                var predictionResult2 = document.getElementById('prediction-result-2');
+
+                $(predictionResult1).html((res.class_0 > 0.5 ? 'True' : 'False') + ' (' + res.class_0 + ')');
+                $(predictionResult2).html((res.class_1 > 0.5 ? 'True' : 'False') + ' (' + res.class_1 + ')');
+
+                predictionResult1.style.color = res.class_0 > 0.5 ? '#409eff' : '#f56c6c';
+                predictionResult2.style.color = res.class_1 > 0.5 ? '#409eff' : '#f56c6c';
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
+</script>
+</body>
+</html>
+
+
