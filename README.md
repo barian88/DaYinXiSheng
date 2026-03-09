@@ -22,11 +22,18 @@
 ## 🖼️ System Preview
 
 <div align="center">
-  <img src="assets/screenshots/图片1.png" width="400" alt="System Preview 1">
-  <img src="assets/screenshots/图片2.png" width="400" alt="System Preview 2">
-  <br>
-  <img src="assets/screenshots/图片3.png" width="400" alt="System Preview 3">
-  <img src="assets/screenshots/图片4.png" width="400" alt="System Preview 4">
+  <table>
+    <tr>
+      <td>
+        <img src="assets/screenshots/图片1.png" width="400" alt="System Preview 1">
+      </td>
+      <td>
+        <img src="assets/screenshots/图片2.png" width="400" alt="System Preview 2"><br>
+        <img src="assets/screenshots/图片3.png" width="400" alt="System Preview 3"><br>
+        <img src="assets/screenshots/图片4.png" width="400" alt="System Preview 4">
+      </td>
+    </tr>
+  </table>
 </div>
 
 ## 🏗️ System Architecture
@@ -107,4 +114,3 @@ The core model was trained using a contrastive framework to minimize the distanc
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
